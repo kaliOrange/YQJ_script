@@ -1,0 +1,49 @@
+{
+  "headers": {
+    "task_list": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    },
+    "reward": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    },
+    "task_complete": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    },
+    "task_status": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    }
+  },
+  "url": {
+    "reward": "http://server.ipolaris-tech.com/task/reward",
+    "task_list": "http://server.ipolaris-tech.com/task/list",
+    "task_status": "http://server.ipolaris-tech.com/task/status",
+    "task_complete": "http://server.ipolaris-tech.com/task/complete"
+  }
+}

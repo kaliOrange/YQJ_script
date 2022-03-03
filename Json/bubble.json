@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "status": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    },
+    "getBubble": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Length": "8",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    },
+    "upgrade": {
+      "pkg": "com.yuanqijiang.beautify.collection.pets",
+      "v": "1.2.9",
+      "os": "android",
+      "Content-Length": "0",
+      "Host": "server.ipolaris-tech.com",
+      "Connection": "Keep-Alive",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "okhttp/4.9.3"
+    },
+    "url": {
+      "getStatus": "http://server.ipolaris-tech.com/factory/status",
+      "getBubble": "http://server.ipolaris-tech.com/factory/getBubble",
+      "upgrade": "http://server.ipolaris-tech.com/factory/upgrade"
+    }
+  }
+}
