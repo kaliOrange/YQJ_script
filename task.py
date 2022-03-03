@@ -11,6 +11,7 @@
 # 描述：这是一个用来操作 元气酱 每日任务的脚本
 '''
 '''
+cron: 59 23 31 12 *
 new Env('元气酱_每日任务的脚本接口');
 '''
 import requests, simplejson,getJson

@@ -11,6 +11,7 @@
 # 描述：这是用于获取json文件中的数据
 '''
 '''
+cron: 59 23 31 12 *
 new Env('元气酱_脚本json文件数据接口');
 '''
 import simplejson
