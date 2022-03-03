@@ -29,11 +29,11 @@
       "Connection": "Keep-Alive",
       "Accept-Encoding": "gzip",
       "User-Agent": "okhttp/4.9.3"
-    },
-    "url": {
-      "getStatus": "http://server.ipolaris-tech.com/factory/status",
-      "getBubble": "http://server.ipolaris-tech.com/factory/getBubble",
-      "upgrade": "http://server.ipolaris-tech.com/factory/upgrade"
     }
+  },
+  "url": {
+    "status": "http://server.ipolaris-tech.com/factory/status",
+    "getBubble": "http://server.ipolaris-tech.com/factory/getBubble",
+    "upgrade": "http://server.ipolaris-tech.com/factory/upgrade"
   }
 }

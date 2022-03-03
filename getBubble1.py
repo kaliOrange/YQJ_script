@@ -17,9 +17,10 @@ cron: 20 1,3,5,7,9,11,13,15,17,19,21,23 * * *
 new Env('元气酱_元气工厂_01');
 '''
 import requests, simplejson
-import getJson,getInfo
+import getJson, getInfo
 
 bubble_json = getJson.getBubble()
+
 
 # 设置用户tk和vn
 def default(tk: str, vn: str):
@@ -32,7 +33,6 @@ def default(tk: str, vn: str):
 
 
 # status用于获取元气工厂状态的get请求头
-print(bubble_json)
 headers_status = bubble_json['headers']['status']
 
 # getBubble用于获取元气工厂元气的post请求头
@@ -56,7 +56,7 @@ def main():
     # 获取YQJ_cookie.json文本数据
     cookies = getJson.getCookies()
     # 转换数据为json数据并遍历cookies
-    for cookie in simplejson.loads(cookies)['cookies']:
+    for cookie in cookies['cookies']:
         # 批量执行
         getBubble(cookie['tk'], cookie['vn'])
 
@@ -92,7 +92,7 @@ def getBubble(tk: str, vn: str):
     # 判断当前元气是否大于等于10：是-》获取元气 | 否-》 不获取
     if bubble_number >= 5:
         # 获取元气工厂元气
-        Bubble_response = requests.post(url=url_getBubble, headers=getBubble, data=getBubbleData)
+        Bubble_response = requests.post(url=url_getBubble, headers=headers_getBubble, data=getBubbleData)
         # 判断响应状态码
         if Bubble_response.status_code != 200:
             print('获取元气工厂元气响应异常。')
@@ -106,7 +106,7 @@ def getBubble(tk: str, vn: str):
 # 获取元气工厂元气状态
 def getBubbleStatus():
     # 获取元气工厂状态
-    status_response = requests.get(url=url_getStatus, headers=status)
+    status_response = requests.get(url=url_getStatus, headers=headers_status)
 
     # 判断响应码，不为 200 退出
     if status_response.status_code != 200:
@@ -126,7 +126,7 @@ def getBubbleStatus():
 
 
 def upgrade():
-    upgrade_response = requests.get(url=url_upgrade, headers=upgrade)
+    upgrade_response = requests.get(url=url_upgrade, headers=headers_upgrade)
     try:
         upgrade_json = simplejson.loads(upgrade_response.text)
         if upgrade_json['ret'] == 200:
