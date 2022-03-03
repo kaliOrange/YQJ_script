@@ -9,10 +9,12 @@
 # E-Mail:
 # Date:2022年2月26日
 ###########################
-# 描述：这是用与获取元气酱APP元气工厂的元气
-# 版本更新： 1.修改getBubbleNumber()函数：getBubble(),返回值为json
+# 描述：这是用与获取元气酱APP 用户信息接口
 '''
-
+'''
+cron: 1
+new Env('元气酱_用户信息脚本接口');
+'''
 
 import requests,simplejson,getJson
 

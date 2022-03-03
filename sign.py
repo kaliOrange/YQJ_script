@@ -121,7 +121,7 @@ def requestSing(tk: str, vn: str):
 
 # 获取YQJ_cookie.json文本数据
 try:
-    with open('Json/YQJ_cookie.json', 'r', encoding='utf-8') as f:
+    with open('Json/cookie.json', 'r', encoding='utf-8') as f:
         cookies = f.read()
 except:
     print('获取COOKIE失败！请检查YQJ_cookie.json文件是否存在.')

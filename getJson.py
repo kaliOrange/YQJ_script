@@ -10,9 +10,13 @@
 ###########################
 # 描述：这是用于获取json文件中的数据
 '''
+'''
+cron: 1
+new Env('元气酱_脚本json文件数据接口');
+'''
 import simplejson
 def getCookies():
-    with open('Json/YQJ_cookie.json','r',encoding='utf-8') as f:
+    with open('Json/cookie.json', 'r', encoding='utf-8') as f:
         cookies = f.read()
     return simplejson.loads(cookies)
 
@@ -32,6 +36,6 @@ def getInfo():
     return simplejson.loads(info)
 
 def getBubble():
-    with open('Json/info.json','r',encoding='utf-8') as f:
+    with open('Json/bubble.json','r',encoding='utf-8') as f:
         bubble = f.read()
     return simplejson.loads(bubble)

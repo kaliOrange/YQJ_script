@@ -3,7 +3,7 @@
 '''
 元气工厂
 ###########################
-# Class name: getBubble.py
+# Class name: getBubble1.py
 # Version: 1.1.0
 # Author: kaliOrange
 # E-Mail:
@@ -15,8 +15,6 @@
 '''
 cron: 20 1,3,5,7,9,11,13,15,17,19,21,23 * * *
 new Env('元气酱_元气工厂_01');
-cron: */40 */2 * * *
-new Env('元气酱_元气工厂_02');
 '''
 import requests, simplejson
 import getJson,getInfo
@@ -34,6 +32,7 @@ def default(tk: str, vn: str):
 
 
 # status用于获取元气工厂状态的get请求头
+print(bubble_json)
 headers_status = bubble_json['headers']['status']
 
 # getBubble用于获取元气工厂元气的post请求头

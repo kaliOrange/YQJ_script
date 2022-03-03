@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding:UTF-8 -*-
 '''
-元气工厂
 ###########################
 # Class name: task.py
 # Version: 1.0.0
@@ -9,9 +8,12 @@
 # E-Mail:
 # Date:2022年3月3日
 ###########################
-# 描述：这是一个用来操作 元气酱 任务的脚本
+# 描述：这是一个用来操作 元气酱 每日任务的脚本
 '''
-
+'''
+cron: 1
+new Env('元气酱_每日任务的脚本接口');
+'''
 import requests, simplejson,getJson
 
 task_json =  getJson.getTask()
