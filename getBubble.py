@@ -3,19 +3,23 @@
 '''
 元气工厂
 ###########################
-# Class name: YQJ_getBubble1.1.0.py
+# Class name: getBubble.py
 # Version: 1.1.0
 # Author: kaliOrange
 # E-Mail:
 # Date:2022年2月26日
 ###########################
 # 描述：这是用与获取元气酱APP元气工厂的元气
-# 版本更新： 1.删除getInfo()函数，使用YQJ_qiandao.YQJ_getInfo 函数
-           2.删除getBubbleNumber()函数：getStatus(),返回值为json
-
+# 版本更新：
+'''
+'''
+cron: 20 1,3,5,7,9,11,13,15,17,19,21,23 * * *
+new Env('元气酱_元气工厂_01');
+cron: */40 */2 * * *
+new Env('元气酱_元气工厂_02');
 '''
 import requests, simplejson
-import getJson,YQJ_getInfo
+import getJson,getInfo
 
 bubble_json = getJson.getBubble()
 
@@ -63,7 +67,7 @@ def getBubble(tk: str, vn: str):
     default(tk=tk, vn=vn)
     print('-' * 20)
     # 打印当前用户名
-    print('当前用户：' + str(YQJ_getInfo.get(tk=tk, vn=vn)['result']['nickName']))
+    print('当前用户：' + str(getInfo.get(tk=tk, vn=vn)['result']['nickName']))
 
     # 获取元气工厂元气状态
     bubbleStatus = getBubbleStatus()
@@ -74,10 +78,10 @@ def getBubble(tk: str, vn: str):
     # 获取升级工厂需求元气数
     price = bubbleStatus['result']['nextLevelFactory']['price']
     # 打印当前用户元气总数
-    print('当前用户元气总数：' + str(YQJ_getInfo.get(tk=tk, vn=vn)['result']['coin']))
+    print('当前用户元气总数：' + str(getInfo.get(tk=tk, vn=vn)['result']['coin']))
     # 判断是否可升级工厂
     print('当前工厂等级：' + str(bubbleStatus['result']['factory']['level']))
-    if price <= YQJ_getInfo.get(tk=tk, vn=vn)['result']['coin']:
+    if price <= getInfo.get(tk=tk, vn=vn)['result']['coin']:
         # 升级元气工厂
         print('已达到升级要求，开始升级工厂等级。     ', end='')
         upgrade()
@@ -97,7 +101,7 @@ def getBubble(tk: str, vn: str):
     else:
         print('未达到收获条件。')
         return False
-    print('当前用户元气总数：' + str(YQJ_getInfo.getInfo(tk=tk, vn=vn)['result']['coin']))
+    print('当前用户元气总数：' + str(getInfo.getInfo(tk=tk, vn=vn)['result']['coin']))
 
 
 # 获取元气工厂元气状态

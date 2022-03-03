@@ -3,7 +3,7 @@
 '''
 元气工厂
 ###########################
-# Class name: YQJ_getInfo.py
+# Class name: getInfo.py
 # Version: 1.0.0
 # Author: kaliOrange
 # E-Mail:

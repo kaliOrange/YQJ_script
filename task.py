@@ -3,7 +3,7 @@
 '''
 元气工厂
 ###########################
-# Class name: YQJ_task.py
+# Class name: task.py
 # Version: 1.0.0
 # Author: kaliOrange
 # E-Mail:

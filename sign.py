@@ -3,7 +3,7 @@
 '''
 元气工厂
 ###########################
-# Class name: YQJ_sign1.1.1.py
+# Class name: sign.py
 # Version: 1.1.1
 # Author: kaliOrange
 # E-Mail:
@@ -11,9 +11,12 @@
 ###########################
 # 描述：这是 元气酱 每日签到完成脚本
 '''
-
+'''
+cron: 53 0 * * *	
+new Env('元气酱_每日签到');
+'''
 import requests, simplejson
-import YQJ_getInfo,YQJ_task,getJson
+import getInfo,task,getJson
 
 sign_json = getJson.getSign()
 
@@ -35,7 +38,7 @@ url_sign_status = sign_json['url']['sign_status']
 
 def run(tk: str, vn: str):
     # 打印当前用户元气总数
-    print('当前用户元气总数：' + str(YQJ_getInfo.get(tk=tk, vn=vn)['result']['coin']))
+    print('当前用户元气总数：' + str(getInfo.get(tk=tk, vn=vn)['result']['coin']))
     # 初始化cookie
     default_headers(tk=tk, vn=vn)
 
@@ -64,7 +67,7 @@ def run(tk: str, vn: str):
 
     # 获取激励任务状态
     print('"视频激励翻倍奖励"任务状态：', end='')
-    task_status_json = YQJ_task.post_task_status(tk=tk, vn=vn, code='x_task_002')
+    task_status_json = task.post_task_status(tk=tk, vn=vn, code='x_task_002')
     if task_status_json != False:
         # 判断：未签到执行签到，已签到则跳过
         if task_status_json['result']['status'] == 'received':
@@ -73,14 +76,14 @@ def run(tk: str, vn: str):
             print('未完成')
             print('正在执行任务...\t', end='')
             if task_status_json['result']['status'] == 'uncompleted':
-                YQJ_task.task_complete(tk=tk, vn=vn, code='x_task_002')
-            if YQJ_task.post_task_status(tk=tk, vn=vn, code='x_task_002')['result']['status'] == 'completed':
-                print('获取' + str(YQJ_task.reward(tk=tk, vn=vn, code='x_task_002')['result']['reward']['coin']) + '元气\t',
+                task.task_complete(tk=tk, vn=vn, code='x_task_002')
+            if task.post_task_status(tk=tk, vn=vn, code='x_task_002')['result']['status'] == 'completed':
+                print('获取' + str(task.reward(tk=tk, vn=vn, code='x_task_002')['result']['reward']['coin']) + '元气\t',
                       end='')
-            if YQJ_task.post_task_status(tk=tk, vn=vn, code='x_task_002')['result']['status'] == 'received':
+            if task.post_task_status(tk=tk, vn=vn, code='x_task_002')['result']['status'] == 'received':
                 print('已完成')
     # 打印当前用户元气总数
-    print('当前用户元气总数：' + str(YQJ_getInfo.get(tk=tk, vn=vn)['result']['coin']))
+    print('当前用户元气总数：' + str(getInfo.get(tk=tk, vn=vn)['result']['coin']))
 
 def get_sign_status(tk: str, vn: str):
     headers_sign_status['tk'] = tk
