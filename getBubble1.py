@@ -126,12 +126,11 @@ def getBubbleStatus():
 
 
 def upgrade():
-    upgrade_response = requests.get(url=url_upgrade, headers=headers_upgrade)
+    upgrade_response = requests.post(url=url_upgrade, headers=headers_upgrade)
     try:
         upgrade_json = simplejson.loads(upgrade_response.text)
         if upgrade_json['ret'] == 200:
             print('升级成功！')
-            print('当前等级：' + upgrade_json['result']['currentLevel'])
             upgrade_response.close()
             return True
     except:
