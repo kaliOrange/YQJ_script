@@ -38,10 +38,10 @@ def run(tk: str, vn: str):
             # 判断任务是否是uncompleted未激活状态
             if task_json['status'] == "uncompleted":
                 # 激活任务
-                task.post_task_complete(task_json['code'])
+                task.post_task_complete(code=task_json['code'],tk=tk, vn=vn)
 
             # 遍历任务,如果任务未完成次数小于2：执行一次。否则else，遍历任务
-            if (task_json['total'] - task_json['count'])>2:
+            if (task_json['total'] - task_json['count'])<2:
                 task.post_reward(tk=tk, vn=vn, code=task_json['code'])
             else:
                 # 遍历任务总次数total-任务已做count次数

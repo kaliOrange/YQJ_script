@@ -41,7 +41,6 @@ def run(tk: str, vn: str):
     print('当前用户元气总数：' + str(getInfo.get(tk=tk, vn=vn)['result']['coin']))
     # 初始化cookie
     default_headers(tk=tk, vn=vn)
-
     # 获取签到状态
     print('签到状态：', end='')
     sign_status_json = get_sign_status(tk=tk, vn=vn)
@@ -76,9 +75,9 @@ def run(tk: str, vn: str):
             print('未完成')
             print('正在执行任务...\t', end='')
             if task_status_json['result']['status'] == 'uncompleted':
-                task.task_complete(tk=tk, vn=vn, code='x_task_002')
+                task.post_task_complete(tk=tk, vn=vn, code='x_task_002')
             if task.post_task_status(tk=tk, vn=vn, code='x_task_002')['result']['status'] == 'completed':
-                print('获取' + str(task.reward(tk=tk, vn=vn, code='x_task_002')['result']['reward']['coin']) + '元气\t',
+                print('获取' + str(task.post_reward(tk=tk, vn=vn, code='x_task_002')['result']['reward']['coin']) + '元气\t',
                       end='')
             if task.post_task_status(tk=tk, vn=vn, code='x_task_002')['result']['status'] == 'received':
                 print('已完成')
@@ -103,17 +102,17 @@ def requestSing(tk: str, vn: str):
     try:
         sing_response = requests.get(url=url_sign, headers=headers_sign)
 
-        sing_response_json = simplejson.loads(sing_response.text)['ret']
-        if sing_response_json == 9017:
+        sing_response_json = simplejson.loads(sing_response.text)
+        if sing_response_json['ret'] == 9017:
             print('响应码9022，今天已完成签到！')
-            return True
+            return False
 
-        if sing_response_json != 200:
+        if sing_response_json['ret'] != 200:
             print('签到失败，json状态码异常.')
             return False
 
         print('签到成功')
-        return True
+        return sing_response_json
     except:
         print('签到失败，未知的脚本异常.')
     return False
