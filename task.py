@@ -18,15 +18,15 @@ import requests, simplejson,getJson
 
 task_json =  getJson.getTask()
 
-headers_task_list = task_json['headers']['task_list']
-headers_reward = task_json['headers']['reward']
-headers_task_complete = task_json['headers']['task_complete']
-headers_task_status = task_json['headers']['task_status']
+headers_task_list = task_json['list']['headers']
+headers_reward = task_json['reward']['headers']
+headers_task_complete = task_json['complete']['headers']
+headers_task_status = task_json['status']['headers']
 
-url_reward = task_json['url']['reward']
-url_task_list = task_json['url']['task_list']
-url_task_status = task_json['url']['task_status']
-url_task_complete = task_json['url']['task_complete']
+url_reward = task_json['reward']['url']
+url_task_list = task_json['list']['url']
+url_task_status = task_json['status']['url']
+url_task_complete = task_json['complete']['url']
 
 
 # 激活任务

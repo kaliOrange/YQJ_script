@@ -28,12 +28,12 @@ def default_headers(tk: str, vn: str):
     headers_sign_status['vn'] = vn
 
 
-headers_sign = sign_json['headers']['sign']
+headers_sign = sign_json['v1']['headers']
 
-headers_sign_status = sign_json['headers']['sign_status']
+headers_sign_status = sign_json['record']["v1"]['headers']
 
-url_sign = sign_json['url']['sign']
-url_sign_status = sign_json['url']['sign_status']
+url_sign = sign_json['v1']['url']
+url_sign_status = sign_json['record']["v1"]['url']
 
 
 def run(tk: str, vn: str):

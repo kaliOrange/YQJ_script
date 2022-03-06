@@ -21,21 +21,21 @@ def getCookies():
     return simplejson.loads(cookies)
 
 def getTask():
-    with open('Json/task.json','r',encoding='utf-8') as f:
+    with open('Json/data.json','r',encoding='utf-8') as f:
         task = f.read()
-    return simplejson.loads(task)
+    return simplejson.loads(task)["result"]["task"]
 
 def getSign():
-    with open('Json/sign.json','r',encoding='utf-8') as f:
+    with open('Json/data.json','r',encoding='utf-8') as f:
         sign = f.read()
-    return simplejson.loads(sign)
+    return simplejson.loads(sign)["result"]["user"]["sign"]
 
 def getInfo():
-    with open('Json/info.json','r',encoding='utf-8') as f:
+    with open('Json/data.json','r',encoding='utf-8') as f:
         info = f.read()
-    return simplejson.loads(info)
+    return simplejson.loads(info)["result"]["user"]["info"]
 
 def getBubble():
-    with open('Json/bubble.json','r',encoding='utf-8') as f:
-        bubble = f.read()
-    return simplejson.loads(bubble)
+    with open('Json/data.json','r',encoding='utf-8') as f:
+        getBubble = f.read()
+    return simplejson.loads(getBubble)["result"]["factory"]

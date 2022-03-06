@@ -22,13 +22,13 @@ import getJson,task,getInfo
 def run(tk: str, vn: str):
     # 打印当前用户元气总数
     print('当前用户元气总数：' + str(getInfo.get(tk=tk, vn=vn)['result']['coin']))
-    # 获取任务列表JSON
+    # 获取每日任务列表JSON
     task_list_json = task.get_task_list(tk=tk, vn=vn)
     if task_list_json == False:
         print('获取任务列表失败！')
         return False
 
-    # 遍历任务列表
+    # 遍历每日任务列表
     for task_json in task_list_json['result']:
         print('任务名称：'+ task_json['name']+'\t状态：',end='')
         # 判断任务状态是否是完成，是：else，否：执行
@@ -51,6 +51,7 @@ def run(tk: str, vn: str):
             print('已成功执行脚本...')
         else:
             print('已完成')
+
     print('-'*10)
     print('正在检查任务状态...')
     task_list_json = task.get_task_list(tk=tk, vn=vn)

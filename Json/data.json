@@ -1,0 +1,165 @@
+{
+  "result": {
+    "user": {
+      "info": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/user/info",
+        "request": "get",
+        "describe": "获取用户信息"
+      },
+      "sign": {
+        "v1": {
+          "headers": {
+            "pkg": "com.yuanqijiang.beautify.collection.pets",
+            "v": "1.2.9",
+            "os": "android",
+            "Host": "server.ipolaris-tech.com",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip",
+            "User-Agent": "okhttp/4.9.3"
+          },
+          "url": "http://server.ipolaris-tech.com/user/sign/v1",
+          "request": "get",
+          "describe": "请求签到"
+        },
+        "record": {
+          "v1": {
+            "headers": {
+              "pkg": "com.yuanqijiang.beautify.collection.pets",
+              "v": "1.2.9",
+              "os": "android",
+              "Host": "server.ipolaris-tech.com",
+              "Connection": "Keep-Alive",
+              "Accept-Encoding": "gzip",
+              "User-Agent": "okhttp/4.9.3"
+            },
+            "url": "http://server.ipolaris-tech.com/user/sign/record/v1",
+            "request": "get",
+            "describe": "获取签到状态"
+          },
+          "describe": "获取签到状态"
+        },
+        "describe": "每日签到"
+      },
+      "describe": "用户"
+    },
+    "task": {
+      "list": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/task/list",
+        "request": "get",
+        "describe": "获取任务列表数据"
+      },
+      "reward": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/task/reward",
+        "request": "post",
+        "describe": "完成任务"
+      },
+      "complete": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/task/complete",
+        "request": "post",
+        "describe": "激活任务"
+      },
+      "status": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/task/status",
+        "request": "post",
+        "describe": "获取任务状态"
+      },
+      "describe": "每日任务"
+    },
+    "factory": {
+      "status": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/factory/status",
+        "request": "get",
+        "describe": "获取元气工厂状态"
+      },
+      "getBubble": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Length": "8",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/factory/getBubble",
+        "request": "get",
+        "describe": "获取元气工厂元气"
+      },
+      "upgrade": {
+        "headers": {
+          "pkg": "com.yuanqijiang.beautify.collection.pets",
+          "v": "1.2.9",
+          "os": "android",
+          "Content-Length": "0",
+          "Host": "server.ipolaris-tech.com",
+          "Connection": "Keep-Alive",
+          "Accept-Encoding": "gzip",
+          "User-Agent": "okhttp/4.9.3"
+        },
+        "url": "http://server.ipolaris-tech.com/factory/upgrade",
+        "request": "get",
+        "describe": "升级元气工厂"
+      },
+      "describe": "元气工厂"
+    }
+  }
+}

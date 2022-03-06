@@ -33,23 +33,23 @@ def default(tk: str, vn: str):
 
 
 # status用于获取元气工厂状态的get请求头
-headers_status = bubble_json['headers']['status']
+headers_status = bubble_json['status']['headers']
 
 # getBubble用于获取元气工厂元气的post请求头
-headers_getBubble = bubble_json['headers']['getBubble']
+headers_getBubble = bubble_json['getBubble']['headers']
 # getBubbleData用于获取元气工厂元气的post请求数据
 getBubbleData = {'type': 'all'}
 
-headers_upgrade = bubble_json['headers']['upgrade']
+headers_upgrade = bubble_json['upgrade']['headers']
 
 # 获取元气工厂状态URL
-url_getStatus = bubble_json['url']['status']
+url_getStatus = bubble_json['status']['url']
 
 # 获取元气工厂元气URL
-url_getBubble = bubble_json['url']['getBubble']
+url_getBubble = bubble_json['getBubble']['url']
 
 # 升级元气工厂URL
-url_upgrade = bubble_json['url']['upgrade']
+url_upgrade = bubble_json['upgrade']['url']
 
 
 def main():

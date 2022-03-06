@@ -20,10 +20,10 @@ import requests,simplejson,getJson
 
 info_json = getJson.getInfo()
 # 获取用户info数据请求头
-getInfo_headers = info_json['headers']['info']
+getInfo_headers = info_json['headers']
 
 # 获取user数据URL
-url_info = info_json['url']['info']
+url_info = info_json['url']
 
 # 获取用户信息
 def getInfo(tk:str,vn:str):
