@@ -11,9 +11,9 @@
           "Accept-Encoding": "gzip",
           "User-Agent": "okhttp/4.9.3"
         },
+        "describe": "获取用户信息",
         "url": "http://server.ipolaris-tech.com/user/info",
-        "request": "get",
-        "describe": "获取用户信息"
+        "request": "get"
       },
       "sign": {
         "v1": {
