@@ -73,19 +73,20 @@ def getBubble(tk: str, vn: str):
     if bubbleStatus == False:
         print('获取元气工厂状态失败，跳过此用户！')
         return False
-
-    # 获取升级工厂需求元气数
-    price = bubbleStatus['result']['nextLevelFactory']['price']
     # 打印当前用户元气总数
     print('当前用户元气总数：' + str(getInfo.get(tk=tk, vn=vn)['result']['coin']))
     # 判断是否可升级工厂
     print('当前工厂等级：' + str(bubbleStatus['result']['factory']['level']))
-    if price <= getInfo.get(tk=tk, vn=vn)['result']['coin']:
-        # 升级元气工厂
-        print('已达到升级要求，开始升级工厂等级。     ', end='')
-        upgrade()
-    else:
-        print('升级需要 ' + str(price) + ' 元气，未达到升级条件，跳过升级。')
+    # 获取升级工厂需求元气数
+    if 'nextLevelFactory' in bubbleStatus['result']:
+        price = bubbleStatus['result']['nextLevelFactory']['price']
+        if price <= getInfo.get(tk=tk, vn=vn)['result']['coin']:
+            # 升级元气工厂
+            print('已达到升级要求，开始升级工厂等级。     ', end='')
+            upgrade()
+        else:
+            print('升级需要 ' + str(price) + ' 元气，未达到升级条件，跳过升级。')
+
     # 获取元气工厂元气数量
     bubble_number = bubbleStatus['result']['bubble']
     print('元气工厂元气数：' + str(bubble_number))
